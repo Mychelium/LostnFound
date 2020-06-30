@@ -1,0 +1,18 @@
+div {
+  color: rgb(95,94,96);
+  max-width: 860px;
+}
+.player iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  display: block;
+  width: calc(100% - 2rem - 8px);
+  height: calc(100% - 2rem - 8px);
+}
+#player {
+  border: 1px red solid;
+  //max-height: 96vh;
+  border: 4px blue dotted;
+  padding: 1rem;
+}

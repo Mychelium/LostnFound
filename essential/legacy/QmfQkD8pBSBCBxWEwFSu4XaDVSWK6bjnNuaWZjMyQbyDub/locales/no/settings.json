@@ -1,0 +1,31 @@
+{
+  "title": "Innstillinger",
+  "save": "Lagre",
+  "saving": "Lagrer...",
+  "reset": "Tilbakestill",
+  "language": "Språk",
+  "config": "IPFS Konfigurasjon",
+  "languageModal": {
+    "title": "Skifte språk",
+    "description": "Velg ditt foretrukne språk"
+  },
+  "actions": {
+    "edit": "Endre",
+    "close": "Lukk"
+  },
+  "fetchingSettings": "Henter innstillinger...",
+  "configApiNotAvailable": "IPFS sitt konfigurasjons API er ikke tilgjengelig. Vennligst deaktiver \"IPFS Companion\" Web extension, og prøv på nytt.",
+  "settingsUnavailable": "Innstillinger ikke tilgjengelig. Vennligst sjekk at din IPFS daemon kjører.",
+  "settingsHaveChanged": "Innstillingene er endret, vennligst klikk <1>Tilbakestill</1> for å oppdatere editor innholdet",
+  "errorOccured": "Det oppsto en feil under lagring av endringene",
+  "checkConsole": "Sjekk nettleserkonsollen for mer info.",
+  "changesSaved": "Dine endringer har blitt lagret",
+  "settingsWillBeUsedNextTime": "De nye innstillingene vil bli brukt neste gang du starter din IPFS daemon.",
+  "ipfsConfigDescription": "IPFS-konfigurasjonsfilen er et json dokument. Det leses en gang når IPFS daemon starter. Lagre endringene, og start IPFS daemon på nytt for å bruke de.",
+  "ipfsDesktop": "IPFS Desktop",
+  "launchOnStartup": "Start ved oppstart",
+  "autoAddScreenshots": "Legg til skjermbilder automatisk",
+  "autoAddScreenshotsDescription": "Bruk <0>{ctrlKey}</0>+<2>{altKey}</2>+<3>S</3> for å ta skjermbilder, og legge de til i oppbevaringsstedet.",
+  "downloadCopiedHash": "Last ned kopiert hash",
+  "downloadCopiedHashDescription": "Bruk <0>{ctrlKey}</0> + <2>{altKey}</2> + <3>D</3> for å laste ned den siste kopierte hashen. "
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Soubory",
+  "home": "Hlavní stránka",
+  "breadcrumbs": "Cesta",
+  "finished": "Dokončeno!",
+  "totalSize": "Celková velikost: {size}",
+  "filesSelected": "{count, plural, one {Soubor vybrán} few {Souborů vybráno} many {Souborů vybráno} other {Souborů vybráno}}",
+  "individualFilesOnly": "Dostupné pouze pro jednotlivé soubory",
+  "fileName": "Jméno souboru",
+  "size": "Velikost",
+  "noPDFSupport": "Váš prohlížeč nepodporuje PDF. Prosím stáhněte si PDF soubor k otevření:",
+  "downloadPDF": "Stáhnout PDF soubor.",
+  "downloadInstead": "Zkuste místo toho to <1>stáhnout</1>.",
+  "cantBePreviewed": "Pardón, tento soubor nemůže být zobrazen",
+  "addFile": "File",
+  "addFolder": "Folder",
+  "addByPath": "From IPFS",
+  "addToIPFS": "Přidat",
+  "newFolder": "Nová složka",
+  "actions": {
+    "add": "Přidat",
+    "delete": "Smazat",
+    "rename": "Přejmenovat",
+    "download": "Stáhnout",
+    "inspect": "Prozkoumat",
+    "copyHash": "Zkopírovat hash",
+    "share": "Sdílet",
+    "close": "Zavřít",
+    "copy": "Zkopírovat",
+    "cancel": "Zrušit",
+    "clear": "Smazat",
+    "create": "Vytvořit",
+    "save": "Uložit",
+    "unselectAll": "Odznačit vše"
+  },
+  "shareModal": {
+    "title": "Sdílet soubory",
+    "description": "Zkopírovat odkaz níže a sdílet ho s vašimi přátely."
+  },
+  "renameModal": {
+    "titleFile": "Přejmenovat soubor",
+    "titleFolder": "Přejmenovat složku",
+    "descriptionFile": "Vyberte nové jméno pro tento soubor.",
+    "descriptionFolder": "Vyberte nové jméno pro tuto složku."
+  },
+  "deleteModal": {
+    "titleItem": "{count, plural, one {Smazat položku} few {Smazat {count} položek} many {Smazat {count} položek} other {Smazat {count} položek}}",
+    "titleFolder": "{count, plural, one {Smazat složku} few {Smazat {count} složek} many {Smazat {count} složek} other {Smazat {count} složek}}",
+    "titleFile": "{count, plural, one {Smazat soubor} few {Smazat {count} souborů} many {Smazat {count} souborů} other {Smazat {count} souborů}}",
+    "descriptionItem": "{count, plural, one {Jste si jistý že chcete smazat tuto položku? Tato akce je nevratná!} few {Jste si jistý že chcete smazat {count} položek? Tato akce je nevratná!} many {Jste si jistý že chcete smazat {count} položek? Tato akce je nevratná!} other {Jste si jistý že chcete smazat {count} položek? Tato akce je nevratná!}}",
+    "descriptionFolder": "{count, plural, one {Jste si jistý že chcete smazat tuto složku? Tato akce je nevratná!} few {Jste si jistý že chcete smazat {count} složek? Tato akce je nevratná!} many {Jste si jistý že chcete smazat {count} složek? Tato akce je nevratná!} other {Jste si jistý že chcete smazat {count}složek? Tato akce je nevratná!}}",
+    "descriptionFile": "{count, plural, one {Jste si jistý že chcete smazat tento soubor? Tato akce je nevratná!} few {Jste si jistý že chcete smazat {count} souborů? Tato akce je nevratná!} many {Jste si jistý že chcete smazat {count} souborů? Tato akce je nevratná!} other {Jste si jistý že chcete smazat {count} souborů? Tato akce je nevratná!}}"
+  },
+  "addByPathModal": {
+    "title": "Add from IPFS",
+    "description": "Insert an IPFS path (CID) to add.",
+    "examples": "Examples:"
+  },
+  "newFolderModal": {
+    "title": "Nová složka",
+    "description": "Vložte jméno složky, kterou chcete vytvořit."
+  },
+  "welcomeInfo": {
+    "header": "Vítejte v IPFS Web UI",
+    "paragraph1": "<0><0>Zkontrolujte stav</0> vašeho uzlu, jeho Peer ID. stav připojení, síťový provoz a počet připojených uzlů.</0>",
+    "paragraph2": "<0>Jednoduše <1>spravujte soubory</1> ve vašem IPFS repozitáři. Můžete přidat nové soubory přetáhnutím a pustěním, soubory můžete také přesouvat a přejmenovávat, mazat, sdílet nebo stahovat.</0>",
+    "paragraph3": "<0>Můžete <1>prozkoumávat IPLD data</1> které tvoří základ toho jak IPFS funguje.</0>",
+    "paragraph4": "<0>Podívejte se na všechny <1>připojené uzly</1>,  lokalizované podle jejich IP adresy.</0>",
+    "paragraph5": "<0><0>Prozkoumejte nastavení</0> vašeho IPFS uzlu a upravte je aby lépe odpovídala vaším potřebám.</0>",
+    "paragraph6": "<0>Pokud chcete pomoc posunout Web UI dále, <1>mkrněte na jeho kód</1> nebo <3>nahlašte problém</3>!</0>"
+  },
+  "filesList": {
+    "noFiles": "<0>Žádne soubory v této složce. Pro přidání souboru klikněte na tlačítko \"Přidat do IPFS\".</0>"
+  },
+  "addFilesInfo": "<0>Přidejte soubory do vašeho IPFS uzlu kliknutím na <1>Přidat do IPFS</1> tlačítko.</0>",
+  "companionInfo": "<0>Jelikož používáte <1>IPFS Companion</1>, zobrazené soubory jsou omezeny pouze na ty které jste přidali během používání tohoto rozšíření.</0>"
+}

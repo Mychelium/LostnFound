@@ -1,0 +1,12 @@
+
+find . -name "*.old" -delete
+ack -l Hardbin > list.1
+vim substi.txt
+perl -S substi.pl list.1
+
+ack -l Hardbin > list.2
+perl -S substi.pl list.2
+
+
+rm list.*
+ipfs add -r .

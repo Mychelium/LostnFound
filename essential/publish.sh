@@ -1,10 +1,13 @@
 #
 
+# $birth: 1525868955$
+
 tic=$(date +%s)
 export IPFS_PATH=..
 
 (cd gqtools; git pull)
-du -s * | sort -n
+du -s * | sort -n | tee du.log
+sh bin/qmjs.sh
 qm=$(ipfs add -r -Q .)
 echo qm: $qm
 mv qm.log qm.log~

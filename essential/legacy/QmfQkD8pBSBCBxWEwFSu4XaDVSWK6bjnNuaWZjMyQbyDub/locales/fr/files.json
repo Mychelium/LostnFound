@@ -1,0 +1,77 @@
+{
+  "title": "Fichiers",
+  "home": "Accueil",
+  "breadcrumbs": "Fils d'Ariane",
+  "finished": "Terminé !",
+  "totalSize": "Taille totale: {size}",
+  "filesSelected": "{count, plural, one {Fichiers sélectionnés} other {Fichiers sélectionnés}}",
+  "individualFilesOnly": "Disponible uniquement pour les fichiers individuels",
+  "fileName": "Nom du fichier",
+  "size": "Taille",
+  "noPDFSupport": "Votre navigateur ne prend pas en charge les PDF. Merci de télécharger le PDF pour le visualiser:",
+  "downloadPDF": "Télécharger le PDF.",
+  "downloadInstead": "Essayer <1>de le télécharger</1> à la place.",
+  "cantBePreviewed": "Désolé, ce fichier ne peut être prévisualisé",
+  "addFile": "Fichier",
+  "addFolder": "Dossier",
+  "addByPath": "De IPFS",
+  "addToIPFS": "Ajouter",
+  "newFolder": "Nouveau répertoire",
+  "actions": {
+    "add": "Ajouter",
+    "delete": "Supprimer",
+    "rename": "Renommer",
+    "download": "Télécharger",
+    "inspect": "Inspecter",
+    "copyHash": "Copier le hash",
+    "share": "Partager",
+    "close": "Fermer",
+    "copy": "Copier",
+    "cancel": "Annuler",
+    "clear": "Effacer",
+    "create": "Créer",
+    "save": "Sauvegarder",
+    "unselectAll": "Tout désélectionner"
+  },
+  "shareModal": {
+    "title": "Partager des fichiers",
+    "description": "Copier le lien ci-dessous et le partager avec vos amis."
+  },
+  "renameModal": {
+    "titleFile": "Renommer le fichier",
+    "titleFolder": "Renommer le dossier",
+    "descriptionFile": "Choisir un nouveau nom pour ce fichier.",
+    "descriptionFolder": "Choisir un nouveau nom pour ce dossier."
+  },
+  "deleteModal": {
+    "titleItem": "{count, plural, one {Supprimer l'élément} other {Supprimer {count} éléments}}",
+    "titleFolder": "{count, plural, one {Supprimer le répertoire} other {Supprimer {count} dossiers}}",
+    "titleFile": "{count, plural, one {Supprimer fichier} other {Supprimer {count} fichiers}}",
+    "descriptionItem": "{count, plural, one {Êtes vous sûre de vouloir supprimer cet élément? Cette action est irrévocable et ne peut être annulée.} other {Êtes-vous sûr de vouloir supprimer {count} éléments ? Cette action est permanente et ne peut être annulée.}}",
+    "descriptionFolder": "{count, plural, one {Êtes vous sûre de vouloir supprimer ce répertoire? Cette action est irrévocable et ne peut être annulée.} other {Êtes-vous sûr de vouloir supprimer {count} dossiers ? Cette action est permanente et ne peut être annulée.}}",
+    "descriptionFile": "{count, plural, one {Êtes vous sûre de vouloir supprimer ce fichier? Cette action est irrévocable et ne peut être annulée.} other {Êtes-vous sûr de vouloir supprimer {count} fichiers ? Cette action est permanente et ne peut être annulée.}}"
+  },
+  "addByPathModal": {
+    "title": "Ajouter sur IPFS",
+    "description": "Insérer un chemin IPFS (CID) à ajouter.",
+    "examples": "Exemples:"
+  },
+  "newFolderModal": {
+    "title": "Nouveau dossier",
+    "description": "Insérer le nom du dossier que vous voulez créer."
+  },
+  "welcomeInfo": {
+    "header": "Bienvenu sur l'interface Web d'IPFS",
+    "paragraph1": "<0><0>Vérifiez le statut </0> de votre noeuf, son ID de pair et infos de connexion, le trafic réseau et nombre de pairs connectés.</0>",
+    "paragraph2": "<0><1>Gérez les fichiers</1> de votre dépôt IPFS facilement. Vous pouvez glisser et déposer pour ajouter des fichiers, les déplacer et renommer, les effacer, partager ou les télécharger.</0>",
+    "paragraph3": "<0>Vous pouvez <1>explorer les données IPLD</1> qui sont à la base du fonctionnement d’IPFS.</0>",
+    "paragraph4": "<0>Visualisez tout vos <1>pairs connectés</1>, géolocalisés par leur adresse IP.</0>",
+    "paragraph5": "<0><0>Vérifiez les paramètres</0> de votre nœud IPFS, et mettez les à jour pour mieux correspondre à vos besoins.</0>",
+    "paragraph6": "<0>Si vous voulez aider à faire avancer l'interface Web, <1>vérifiez son code</1> ou <3>signalez un bug</3>!</0>"
+  },
+  "filesList": {
+    "noFiles": "<0>Aucun fichier dans ce répertoire. Cliquez le bouton Ajouter à IPFS pour en ajouter.</0>"
+  },
+  "addFilesInfo": "<0>Ajoutez des fichiers à votre nœud IPFS local en cliquant sur le bouton <1>Ajouter à IPFS</1> ci-dessus.</0>",
+  "companionInfo": "<0>Comme vous utilisez <1>IPFS Companion</1>, la vue des fichiers est limitée aux fichiers ajoutés lors de l'utilisation de l'extension.</0>"
+}

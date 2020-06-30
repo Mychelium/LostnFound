@@ -1,0 +1,47 @@
+{
+  "title": "Status",
+  "peer": "Peer",
+  "peers": "Peers",
+  "addresses": "Addressen",
+  "nodeInfo": "Node-Informationen",
+  "peerId": "Peer-ID",
+  "gateway": "Gateway",
+  "api": "API",
+  "version": "Version",
+  "advanced": "Erweitert",
+  "publicKey": "Öffentlicher Schlüssel",
+  "upSpeed": "Ausgehend",
+  "downSpeed": "Eingehend",
+  "spaceUsed": "Benutzter Speicher",
+  "networkTraffic": "Netzwerkverkehr",
+  "bandwidthOverTime": "Zeitlicher Verlauf der Bandbreite",
+  "bandwidthByPeer": "Bandbreite pro Peer",
+  "distributionOfPeers": "Verteilung der Peers",
+  "pieChartLabel": "{count, plural, one {{percent}% ({count} Peer)} other {{percent}% ({count} Peers)}}",
+  "rateIn": "Eingangsrate",
+  "rateOut": "Ausgangsrate",
+  "totalIn": "Gesamteingang",
+  "totalOut": "Gesamtausgang",
+  "more": "...und {count} weitere",
+  "in": "Eingang",
+  "out": "Ausgang",
+  "codeLink": "Quelltext anzeigen",
+  "bugsLink": "Fehler melden",
+  "revision": "Revision",
+  "StatusConnected": {
+    "header1": "Mit dem IPFS verbunden",
+    "paragraph1": "<0>{repoSize} an Dateien</0> gehostet",
+    "paragraph2": "{count, plural, one {Discovered <0>1 peer</0>} other {<0>{peersCount} Peers</0> entdeckt}}"
+  },
+  "StatusNotConnected": {
+    "header1": "Die API-Verbindung ist fehlgeschlagen",
+    "paragraph1": "<0>Starte einen IPFS-Daemon in einem Terminal.</0>",
+    "paragraph2": "<0><1>Lies die Anleitung</1> für mehr Informationen über das IPFS.</0>"
+  },
+  "AskToEnable": {
+    "label": "Help improve this app by sending anonymous usage data.",
+    "yesLabel": "OK",
+    "noLabel": "No thanks",
+    "detailsLabel": "More info"
+  }
+}

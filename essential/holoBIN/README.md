@@ -1,0 +1,154 @@
+# holobin.  
+> *The world's most secure encrypted pastebin, guaranteed* *
+
+holoBin is an encrypted pastebin, with the decryption key passed
+in the URL fragment, and the code and data served securely with
+[IPFS](https://ipfs.io/). (IPFS is a distributed content-addressable
+storage system that is web-compatible; it's basically bittorrent for
+the web).
+
+If you're viewing this on holobin.ml, then you're using it via the
+holobin.ml public IPFS gateway. The IPFS gateway you use has the same
+capabilities as an ordinary web server (i.e. it can modify content at
+will), so you should make sure to use a gateway you trust. Running
+a local gateway is the best option. Start with the IPFS [Getting
+Started](https://ipfs.io/docs/getting-started/) guide.
+
+Compared to a traditional encrypted pastebin (e.g.
+[ZeroBin](https://zerobin.net)), when used over a trusted gateway, neither
+the code nor the data can be modified as the content hashes are
+cryptographically verified by IPFS. This means there is no possibility for a
+server operator to insert malicious code to exfiltrate the plaintext or
+decryption key. It's the perfect encrypted pastebin.
+
+(* this is not a guarantee)
+
+## Usage
+
+Note that the security benefits of holobin only apply when accessing
+it over a local (or otherwise trusted) gateway. If you access it over
+a gateway that you do not control, then the security model degrades to
+be equivalent to that of traditional encrypted pastebins.
+
+If you trust the holobin.ml server and hosting company and the HTTPS CA
+infrastructure, then you can always find the latest version of holobin
+by going straight to [holobin.ml](https://holobin.ml/).
+
+The [github repo](https://holoGIT.ml/mgc/holobin) should also link
+directly to the latest IPFS hash.
+
+It doesn't matter which IPFS gateway is used to access holobin.ml, but
+you won't be able to publish anything unless you use a writable gateway
+(i.e. ```ipfs daemon --writable```). I am operating a public writable
+gateway on holobin.ml to smooth the user experience. But remember that
+using a public gateway means you are trusting the public gateway not to
+ship malicious code to (for example) exfiltrate the plaintext.
+
+In general it should either work out-of-the-box or give good instructions
+on how to make it work.
+
+The content will need to be pinned to make sure it stays
+around for long term (the same as any content stored in
+IPFS). [holoPin](https://holopin.ml/) is a service offering to pin
+content for a very, *very* small fee. Failing that, content will stay
+around as long as it is cached on any node (e.g. a public gateway).
+
+If you want to share a link to holobin which will automatically
+load this README, append ```#about``` as the fragment. For example,
+[https://holobin.ml/#about](https://holobin.ml/#about) will always
+load the latest version of the code and show the README text.
+
+### Local gateway
+
+A local gateway that you run yourself is the safest way to use holobin.
+
+Follow the <a href="https://ipfs.io/docs/getting-started/">IPFS Getting
+Started guide</a>, but make sure to run the gateway with ```ipfs daemon
+--writable```, else you won't be able to publish anything.
+
+You can then install a browser extension such as <a
+href="https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch">IPFS
+Companion</a> for Chrome to automatically redirect IPFS paths to your
+local gateway.
+
+### Public gateway
+
+Any public gateway will work fine for viewing content, but you won't
+be able to publish anything on a non-writable gateway. Using a public
+gateway also trusts the public gateway not to insert malicious code to
+exfiltrate content (or do anything else it shouldn't).
+
+### Writable public gateway
+
+A writable public gateway will work fine for viewing and publishing,
+but you're still trusting the public gateway not to insert malicious code.
+
+Using the writable public gateway at [holobin.ml](https://holobin.ml/)
+presents largely the same trust model as other encrypted pastebin
+services.
+
+## How it works
+
+The holobin code is served out of IPFS. The user then inputs
+the content. When the content is published, a key is generated
+using the ```crypto.getRandomValues()``` API and the content
+is encrypted in javascript in the browser using AES-256 via
+[Crypto-JS](https://github.com/brix/crypto-js). The new content is then
+pushed to the IPFS gateway.
+
+The decryption key is passed in the URL fragment, and the URL can be
+shared with anybody.
+
+As long as the IPFS gateway is not compromised, and the user visits a
+known-good hash in the first place, there is no possibility for anybody
+to modify either the code or the data, because to do so would change
+the IPFS hash.
+
+Since nobody can modify the code, and nobody can view the key unless you
+show it to them, nobody without the key can either read the plaintext
+or ship a malicious viewer which would exfiltrate the plaintext (or key).
+
+## Self-hosting
+
+You can "self-host" holobin as follows:
+
+    git clone https://holoGIT.ml/mgc/holobin
+    ipfs add -r holobin/
+
+## Custom modifications
+
+If you want to use any custom modifications, you can simply make them,
+publish your new code on IPFS with ```ipfs add```, and then it's
+available and ready to use. It's just as much a first-class citizen as
+the version in this git repo, and you're equally welcome to access it
+via the holobin.ml public writable gateway.
+
+Of course, pull requests are always welcome for improvements that might
+be useful to others.
+
+## Security considerations
+
+You still need to share the paste URL securely, otherwise a third-party
+can read it as easily as anybody else can.
+
+You need to make very sure to use a known-good version of the code when
+creating pastes, as it would be trivial to create a malicious version
+that looks identical. The best thing to do is write down the hash the
+first time you use it, and always use the same hash. If you want to
+upgrade to a new version of the software, you'll need to update your hash.
+
+If you don't use a local (or otherwise trusted) IPFS gateway, then
+the gateway server operator can perform all the same attacks that a
+traditional encrypted pastebin operator could perform.
+
+I don't recommend using holobin for highly critical stuff as the code
+has not been thoroughly audited by anyone but me. If you want to audit
+it please contact me.
+
+## Contact
+
+holoBin was created by Michel Combes from a clone of hardBin created by James Stanley.
+You can email me at [michelc@gc-bank.org](mailto:michelc@gc-bank.org),
+or email James at
+[james@incoherency.co.uk](mailto:james@incoherency.co.uk), or read his
+blog at [incoherency.co.uk](http://incoherency.co.uk/).

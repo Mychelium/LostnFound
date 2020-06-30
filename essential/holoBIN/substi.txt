@@ -1,0 +1,9 @@
+s/Hardbin/holoBin/g
+s,https://github.com/jes/hardbin,https://holoGIT.ml/mgc/holobin,g
+s/hardbincom/holobinml/g
+s/hardbin\.com/holobin\.ml/g
+s/hardbin/holobin/g
+s/pinata\.cloud/holoPin.ml/g
+s/Pinata/holoPin/g
+s/pinata/holopin/g
+s/\.cloud/.ml/g

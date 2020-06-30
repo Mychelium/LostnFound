@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+
+<meta charset="utf8"/>
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@1.7/dist/favicon.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/iglake/cssjs@master/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<style>
+.player {
+  position: relative;
+  height: 480px;
+  padding-bottom: 56.25%;
+}
+</style>
+</head>
+<title> Watch YouTube Video w/o Advertisements : FxpO9c-19II</title>
+
+<body>
+<!-- list: -ar9vsmFhJU, RzApj9PUmT0, iyoL8tjB_hc, VFns39RXPrU, qTXNqxLRm0Y, LHS0V1ejHr8, OZhCk6sieMA, efk5uB7hhi8, epM2ip9rKlA, FxpO9c-19II -->
+<!-- hours: 119 -->
+<div class="player content">
+<div id=player> Watch YouTube Video w/o Advertisements !</div>
+<br clear="all"/>
+</div>
+<!-- OnEnter : see [*](https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp) -->
+<div>search: <input type="text" name="query" id="query" value="" OnChange="searchVideo(this.value);"></div>
+
+<pre>
+modulo: 10
+random: 9
+video: FxpO9c-19II
+</pre>
+
+<br>--&nbsp;<br><a href=https://bafybeih34cqfis3h36w5ypxwz4i6n2mjme7ilyjdsmzcjz2nxq6uefdo7m.cf-ipfs.com/ytnoad.htm#FxpO9c-19II>https://bafybeih34cqfis3h36w5ypxwz4i6n2mjme7ilyjdsmzcjz2nxq6uefdo7m.cf-ipfs.com/ytnoad.htm#FxpO9c-19II</a
+</body>
+
+<script>
+ var origin = document.location.origin;
+ let hash = document.location.hash
+ var fragment
+ if (typeof(hash) == 'undefined' || hash == '') {
+   fragment = 'FxpO9c-19II'
+ } else {
+   fragment = hash.substring(1);
+ }
+      document.getElementById('query').value = fragment;
+      console.log('fragment: "'+fragment+'" 9 : FxpO9c-19II')
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      var id = 0;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          frameborder: '3px',
+          videoId: fragment,
+          playerVars: {
+            theme: "light",
+            modestbranding: 1, // No You Tube logo on control bar
+            autoplay: 1,
+            loop: 1,
+            mute: 0,
+            shufflePlaylist: 1,
+            enablejsapi: 1,
+            volume: '50%',
+            origin: origin
+          },
+          events: {
+            'onStateChange': onPlayerStateChange,
+            'onReady': onPlayerReady
+
+          }
+        });
+      }
+
+function onPlayerReady(event) {
+  event.target.playVideo()
+  //player.unmute()
+}
+function searchVideo(query) {
+  player.cuePlaylist({listType:'search', list:query,
+                    index:1, startSeconds:1})
+  player.setShuffle({'shufflePlaylist' : true});
+}
+
+function onPlayerStateChange(event) {
+    changeBorderColor(event.data);
+    if (event.data == YT.PlayerState.ENDED) {
+      console.log('ended')
+    } else if (event.data == YT.PlayerState.CUED) {
+      console.log('cued');
+    } else if (event.data = YT.PlayerState.UNSTARTED) {
+      console.log('unstarted');
+    } else {
+      console.log(event)
+    }
+
+}
+
+function changeBorderColor(playerStatus) {
+    var color;
+    if (playerStatus == -1) {
+      color = "#37474F"; // unstarted = gray
+    } else if (playerStatus == 0) {
+      color = "#FFFF00"; // ended = yellow
+    } else if (playerStatus == 1) {
+      color = "#33FF1E"; // playing = green
+    } else if (playerStatus == 2) {
+      color = "#DD2C00"; // paused = red
+    } else if (playerStatus == 3) {
+      color = "#AA00FF"; // buffering = purple
+    } else if (playerStatus == 5) {
+      color = "#EF6D00"; // video cued = orange
+    }
+    if (color) {
+      document.getElementById('player').style.borderColor = color;
+    }
+}
+
+</script>

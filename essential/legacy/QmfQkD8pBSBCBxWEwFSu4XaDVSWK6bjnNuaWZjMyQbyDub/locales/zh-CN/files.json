@@ -1,0 +1,77 @@
+{
+  "title": "文件",
+  "home": "首页",
+  "breadcrumbs": "导航栏",
+  "finished": "完成！",
+  "totalSize": "总计大小: {size}",
+  "filesSelected": "{count, plural, other {已选择文件}}",
+  "individualFilesOnly": "仅对文件有效",
+  "fileName": "文件名",
+  "size": "大小",
+  "noPDFSupport": "您的浏览器不支持阅读PDF文件。请下载后阅读。",
+  "downloadPDF": "下载PDF",
+  "downloadInstead": "请尝试<1>下载</1>",
+  "cantBePreviewed": "对不起，本文件不支持预览。",
+  "addFile": "文件",
+  "addFolder": "文件夹",
+  "addByPath": "来自IPFS",
+  "addToIPFS": "添加",
+  "newFolder": "新建文件夹",
+  "actions": {
+    "add": "添加",
+    "delete": "删除",
+    "rename": "重命名",
+    "download": "下载",
+    "inspect": "检查",
+    "copyHash": "复制哈希",
+    "share": "共享",
+    "close": "关闭",
+    "copy": "复制",
+    "cancel": "取消",
+    "clear": "清空",
+    "create": "创建",
+    "save": "保存",
+    "unselectAll": "全部取消选择"
+  },
+  "shareModal": {
+    "title": "共享文件",
+    "description": "请复制以下链接并与您的朋友分享。"
+  },
+  "renameModal": {
+    "titleFile": "重命名文件",
+    "titleFolder": "重命名文件夹",
+    "descriptionFile": "重命名此文件",
+    "descriptionFolder": "重命名此文件夹"
+  },
+  "deleteModal": {
+    "titleItem": "{count, plural, other {删除{count}个项目}}",
+    "titleFolder": "{count, plural, other {删除{count}个文件夹}}",
+    "titleFile": "{count, plural, other {删除{count}个文件}}",
+    "descriptionItem": "{count, plural, other {您是否确定要删除{count}个项目？本操作不可撤销。}}",
+    "descriptionFolder": "{count, plural, other {您是否确定要删除{count}个文件夹？本操作不可撤销。}}",
+    "descriptionFile": "{count, plural, other {您是否确定要删除{count}个文件？本操作不可撤销。}}"
+  },
+  "addByPathModal": {
+    "title": "从IPFS添加",
+    "description": "输入IPFS路径（CID）以添加。",
+    "examples": "示例："
+  },
+  "newFolderModal": {
+    "title": "新建文件夹",
+    "description": "输入新建文件夹名称"
+  },
+  "welcomeInfo": {
+    "header": "欢迎使用 IPFS Web UI",
+    "paragraph1": "<0>检查你的<0>节点状态</0>，节点ID、连接信息、网络传输和已连接节点数量。</0>",
+    "paragraph2": "<0>更简单的<1>管理你IPFS库中文件</1>。你能通过拖放添加文件，移动并重命名它们，删除、分享或下载它们。</0>",
+    "paragraph3": "<0>你能<1>浏览IPLD数据</1>以深入了解IPFS是如何工作的。</0>",
+    "paragraph4": "<0>查看你所有<1>已连接的节点</1>，已经通过IP地址进行定位。</0>",
+    "paragraph5": "<0>复查<0>你的节点设置</0>，并将其更新以更符合你的需求。</0>",
+    "paragraph6": "<0>如果你想帮助推动Web UI的发展，请<1>查看源码</1>或<3>报告bug</3>！</0>"
+  },
+  "filesList": {
+    "noFiles": "<0>此文件夹中没有文件。点击“添加到IPFS”按钮添加。</0>"
+  },
+  "addFilesInfo": "<0>通过点击<1>添加到IPFS</1>添加文件到你的本地IPFS节点。</0>",
+  "companionInfo": "<0>如果你正在使用<1>IPFS伴侣</1>，文件视图仅限于使用扩展程序时添加的文件。</0>"
+}
