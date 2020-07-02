@@ -1,0 +1,14 @@
+# chain™.tk's zone file
+site.tld,ns1,NS,127.0.0.1
+site.tld.,@,A,104.198.14.52
+site.tld.,contact,RP,"michelc.gc-bank.org. ."
+site.tld.,_dnslink,TXT,dnslink=/ipns/QmNzufyrKrzzL3eqNKe6iuDV875SN1Egn2PkKeWxtpNeTk
+site.tld.,_expires,TXT,"20/02/2020"
+site.tld.,@,MX,10 mail.mailinator.com
+site.tld.,*,NS,ns01.freenom.com
+site.tld.,*,NS,ns02.freenom.com
+site.tld.,www,CNAME,admiring-hawking-6d6785.netlify.com
+site.tld,_zone,TXT,{"qm":"QmcuQjJW8qBqmG7gzcAycV9QfnXt2fgw634gL3Ypt3vvD5"}
+site.tld,_json,TXT,{"qm":"QmcuQjJW8qBqmG7gzcAycV9QfnXt2fgw634gL3Ypt3vvD5"}
+
+

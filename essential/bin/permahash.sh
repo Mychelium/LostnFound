@@ -20,6 +20,7 @@ if ipfs files rm /root/misc/etc/line; then true; fi
 ipfs files cp /ipfs/$line /root/misc/etc/line
 
 echo "IPFS is active" | ipfs --offline add -Q --pin=true - 1>/dev/null
+null=$(echo '{"data":null,"link":[]}' | ipfs dag put --cid-base base58btc)
 active=$(echo "IPFS is active" | ipfs --offline add -Q --hash identity --pin=true)
 gone=$(echo '410 gone' | ipfs add -Q --hash sha3-224 --cid-base base58btc)
 empty=$(echo -n '' | ipfs add -Q -n --hash sha3-224 --cid-base base58btc)
@@ -52,6 +53,7 @@ active: $active
 line: $line
 hello: $(echo "Hello World!" | ipfs add -Q  --pin=false -)
 gone: $gone
+null: $null
 empty: $empty
 emptyd: $emptyd
 noprev: $noprev

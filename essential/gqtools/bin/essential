@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+
+# this script make it essential
+#  i.e. file . to MFS
+#
+set -e
+symb=qtools
+# dependencies :
+#   - ipfs
+#   - perl
+#   - ./bin
+#
+# $Source: /root/essential/qtools/bin/essential$
+if echo $0 | grep -q '/'; then
+export SITE=${0%/*/*}
+export PATH=${0%/*}:$PATH
+fi
+
+
+tic=$(date +%s)
+time=$(date +%T)
+date=$(date +%Y-%m-%d)
+qm=$(ipfs add -Q -r .)
+
+gitid=$(git rev-parse --short HEAD)
+ver=$(version $0 | xyml scheduled)
+
+echo "${tic}: $qm" >> qm.log
+eval $(perl -S fullname.pl -a $qm | eyml)
+git config user.email $user@qtools.gq
+git config user.name "$fullname"
+echo "gituser: $(git config user.name) <$(git config user.email)>"
+
+if ! ipfs key list | grep -q -w $symb ; then
+key=$(ipfs key gen -t rsa -s 3072 $symb)
+echo $symb: $key
+else
+key=$(ipfs key list -l | grep -w $symb | cut -d' ' -f1)
+echo ipns: http://127.0.0.1:8080/ipns/$key
+fi
+tag=$(perl -S fullname.pl -a $key | xyml email | ipfs add -Q --raw-leaves --hash id --cid-base=base58btc | cut -c-35)
+
+if [ -e _data/version.yml ]; then
+ sed -i -e "s,version: .*,version: $ver," \
+     -e "s,parent: .*,parent: $gitid," \
+     -e "s,tic: .*,tic: $tic," \
+     -e "s,name: .*,name: $firstname," \
+     -e "s,tag: .*,tag: $tag," _data/version.yml
+fi
+if [ -e _data/ipfs.yml ]; then
+ sed -i -e "s,qm: .*,qm: $qm," _data/ipfs.yml
+fi
+
+if IFS='' read -d '' msg <<EOT ; then true; fi
+$ver: '$time -- ${1:-make it essential} on $date ~ $firstname $lni.'
+gitid: $gitid # (parent)
+qm: $qm
+tag: $tag
+EOT
+
+echo -e "Release: \"$ver $date\"\n$msg"  | tee RELEASE_NOTES.txt | sed -e '2,$s/^/  /'
+#exit -$$
+
+if git commit -a -m "$msg"; then
+commitid=$(git rev-parse HEAD)
+git tag -f -a $ver -m "tagging $commitid on $date"
+echo commitid: $commitid | cut -b 1-14
+if test -e _data/version.yml; then
+sed -i -e "s,parent: .*,parent: $gitid," _data/version.yml
+fi
+if test -e revs.log; then
+echo $tic: $commitid >> revs.log
+else
+ echo "commit: $? ???"
+fi
+
+# test if tag $ver exist ...
+if git ls-remote --tags | grep "$ver"; then
+git push --delete origin "$ver"
+fi
+fi
+echo "git push : "
+git push --follow-tags
+echo .
+
+
+# file it 
+pwd=$(pwd -P)
+qm=$(ipfs add -Q -r $pwd)
+ipfs name publish --allow-offline --key=$symb /ipfs/$qm &
+
+source=$(perl -S kwextract.pl -k source $0)
+parent=${source%/bin/*}
+gdparent=${parent%/*}
+bname=$(basename $pwd)
+echo dir: $gdparent/$bname
+if ! ipfs files stat --hash $gdparent 1>/dev/null 2>&1; then
+ipfs files mkdir -p $gdparent
+fi
+if ipfs files rm -r $gdparent/$bname; then true; fi
+ipfs files cp /ipfs/$qm $gdparent/$bname
+apiport=$(ipfs config Addresses.API | cut -d'/' -f5)
+echo url: http://127.0.0.1:$apiport/webui/#/files$gdparent/$bname
+
